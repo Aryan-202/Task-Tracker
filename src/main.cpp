@@ -6,24 +6,37 @@ int main() {
     TaskManager manager;
     int choice = 0;
 
-    while (choice != 3) {
+    while (choice != 4) {
         std::cout << "\n=== Task Tracker ===\n";
         std::cout << "1. Add Task\n";
-        std::cout << "2. List Tasks\n";
-        std::cout << "3. Exit\n";
+        std::cout << "2. Add Subtask\n";
+        std::cout << "3. List Tasks\n";
+        std::cout << "4. Exit\n";
         std::cout << "Enter choice: ";
         std::cin >> choice;
-
-        // Clear input buffer to prepare for text descriptions
         std::cin.ignore();
 
         if (choice == 1) {
-            std::string description;
+            std::string title, description;
+            std::cout << "Enter task title: ";
+            std::getline(std::cin, title);
             std::cout << "Enter task description: ";
             std::getline(std::cin, description);
-            manager.addTask(description);
+            manager.addTask(title, description);
         } 
         else if (choice == 2) {
+            int taskId;
+            std::string title, description;
+            std::cout << "Enter parent Task ID: ";
+            std::cin >> taskId;
+            std::cin.ignore();
+            std::cout << "Enter subtask title: ";
+            std::getline(std::cin, title);
+            std::cout << "Enter subtask description: ";
+            std::getline(std::cin, description);
+            manager.addSubTaskToTask(taskId, title, description);
+        }
+        else if (choice == 3) {
             manager.listTasks();
         }
     }

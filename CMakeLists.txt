@@ -8,12 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES
     src/main.cpp
     src/Task.cpp
+    src/SubTask.cpp
     src/TaskManager.cpp
+    src/utils/add_subtask.cpp
 )
 
-file(GLOB SOURCES "src/*.cpp")
-
 add_executable(task_tracker ${SOURCES})
-
-
 target_include_directories(task_tracker PRIVATE include)
