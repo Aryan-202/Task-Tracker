@@ -1,126 +1,61 @@
-# Python bytecode
-__pycache__/
-*.py[cod]
-*$py.class
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
 *.so
-.Python
-cython_debug/
+*.so.*
+*.dylib
 
-# Build and distribution
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg
-*.egg-info/
-.installed.cfg
-MANIFEST
-*.manifest
-*.spec
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
-# Virtual environments and package managers
-.venv/
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-__pypackages__/
-.pdm-python
-.pdm-build/
-.pixi/*
-!.pixi/config.toml
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
 
-# Environment variables and local settings
-.env
-.envrc
-.pypirc
-local_settings.py
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
 
-# Databases and runtime data
-db.sqlite3
-db.sqlite3-journal
-instance/
-*.rdb
-*.aof
-*.pid
+# debug information files
+*.dwo
 
-# Logs and temporary files
-*.log
-pip-log.txt
-pip-delete-this-directory.txt
-tempCodeRunnerFile.py
-celerybeat-schedule*
-celerybeat.pid
+# build
+build
 
-# Testing and coverage
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-*.lcov
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Type checking and linting
-.mypy_cache/
-.dmypy.json
-dmypy.json
-.pyre/
-.pytype/
-.ruff_cache/
-
-# IDE and editor files
-.spyderproject
-.spyproject
-.ropeproject
-ipython_config.py
-profile_default/
-
-# Jupyter notebooks
-.ipynb_checkpoints/
-
-# Framework and web assets
-.webassets-cache
-.scrapy/
-docs/_build/
-.pybuilder/
-/site
-.streamlit/secrets.toml
-
-# Localization files
-*.mo
-*.pot
-
-# Task queues and message brokers
-mnesia/
-rabbitmq/
-rabbitmq-data/
-activemq-data/
-
-# Scientific computing
-*.sage.py
-
-# Marimo notebooks
-marimo/_static/
-marimo/_lsp/
-__marimo__/
-
-# Tool caches and generated files
-.cache/
-.abstra/
+# ide
+.vscode
