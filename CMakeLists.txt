@@ -5,9 +5,13 @@ project(TaskTracker VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+set(SOURCES
+    src/main.cpp
+    src/Task.cpp
+    src/TaskManager.cpp
 )
+
+file(GLOB SOURCES "src/*.cpp")
 
 add_executable(task_tracker ${SOURCES})
 
