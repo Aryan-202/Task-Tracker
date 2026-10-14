@@ -2,38 +2,47 @@
 #include "utils.hpp"
 #include <iostream>
 
-void TaskManager::addTask(const std::string& title, const std::string& description) {
+using namespace std;
+
+void TaskManager::addTask(const std::string &title, const std::string &description)
+{
     tasks.emplace_back(nextId++, title, description);
-    std::cout << "Task added successfully!\n";
+    cout << "Task added successfully!" << endl;
 }
 
-bool TaskManager::addSubTaskToTask(int taskId, const std::string& title, const std::string& description) {
-    for (auto& task : tasks) {
-        if (task.id == taskId) {
-            // Using your helper function here:
+bool TaskManager::addSubTaskToTask(int taskId, const std::string &title, const std::string &description)
+{
+    for (auto &task : tasks)
+    {
+        if (task.id == taskId)
+        {
             Utils::addSubTask(task, title, description);
-            std::cout << "Subtask added successfully!\n";
+            cout << "Subtask added successfully!" << endl;
             return true;
         }
     }
-    std::cout << "Task with ID " << taskId << " not found.\n";
+    cout << "Task with ID " << taskId << " not found." << endl;
     return false;
 }
 
-void TaskManager::listTasks() const {
-    if (tasks.empty()) {
-        std::cout << "No tasks found.\n";
+void TaskManager::listTasks() const
+{
+    if (tasks.empty())
+    {
+        cout << "No tasks found." << endl;
         return;
     }
-    
-    std::cout << "\n--- Current Tasks ---\n";
-    for (const auto& task : tasks) {
-        std::cout << task.id << ". [" << (task.isCompleted ? "X" : " ") << "] " 
-                  << task.title << " - " << task.description << "\n";
-        
-        for (const auto& sub : task.subtasks) {
-            std::cout << "    └── " << sub.id << ". [" << (sub.isCompleted ? "X" : " ") << "] " 
-                      << sub.title << " - " << sub.description << "\n";
+
+    cout << "\n--- Current Tasks ---" << endl;
+    for (const auto &task : tasks)
+    {
+        std::cout << task.id << ". [" << (task.isCompleted ? "X" : " ") << "] "
+                  << task.title << " - " << task.description << endl;
+
+        for (const auto &sub : task.subtasks)
+        {
+            std::cout << "    └── " << sub.id << ". [" << (sub.isCompleted ? "X" : " ") << "] "
+                      << sub.title << " - " << sub.description << endl;
         }
     }
 }
