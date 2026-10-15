@@ -15,3 +15,6 @@ set(SOURCES
 
 add_executable(task_tracker ${SOURCES})
 target_include_directories(task_tracker PRIVATE include)
+
+enable_testing()
+add_test(NAME tests COMMAND tests)
