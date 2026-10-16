@@ -1,9 +1,12 @@
 #pragma once
 #include <string>
+#include <filesystem>
 
 struct Task;
 
 namespace Utils {
+    std::filesystem::path getDbPath();
+
     void createTask(int id, const std::string& title, const std::string& desc);
     void getTask(int id, const std::string& title, const std::string& desc);
     void updateTask(int id, const std::string& title, const std::string& desc);

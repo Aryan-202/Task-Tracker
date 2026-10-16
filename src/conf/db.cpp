@@ -1,16 +1,21 @@
 #include <iostream>
 #include <filesystem>
-#include <string>
 #include <fstream> 
+#include <cstdlib>
 
 namespace fs = std::filesystem;
 
-void createFile() {
-    const char* userProfileEnv = std::getenv("USERPROFILE");
+namespace Utils {
+    fs::path getDbPath() {
+        const char* userProfileEnv = std::getenv("USERPROFILE");
+        if (userProfileEnv != nullptr) {
+            return fs::path(userProfileEnv) / ".task_tracker/db/task_tracker.json";
+        }
+        return fs::current_path() / ".task_tracker/db/task_tracker.json";
+    }
 
-    if (userProfileEnv != nullptr)
-    {
-        fs::path file_path = fs::path(userProfileEnv) / "task_tracker.json";
+    void createFile() {
+        fs::path file_path = getDbPath();
         
         std::ofstream file(file_path);
         
@@ -21,9 +26,5 @@ void createFile() {
         } else {
             std::cout << "Failed to open or create the file." << std::endl;
         }
-    } 
-    else 
-    {
-        std::cout << "Error: USERPROFILE environment variable not found!" << std::endl;
     }
 }
