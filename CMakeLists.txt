@@ -10,7 +10,11 @@ set(SOURCES
     src/Task.cpp
     src/SubTask.cpp
     src/TaskManager.cpp
-    src/utils/add_subtask.cpp
+
+    src/utils/create_task.cpp
+    src/utils/get_task.cpp
+    src/utils/update_task.cpp
+    src/utils/delete_task.cpp 
 )
 
 add_executable(task_tracker ${SOURCES})
