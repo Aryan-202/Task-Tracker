@@ -1,7 +1,12 @@
-#include <iostream>
 #include "Utils.hpp"
 
-int Utils::counter(int id)
-{
-    return id++;
+namespace Utils {
+
+    int counter(int& id) {
+        return id++;
+    }
+
+    int counter(int id) {
+        return id + 1;
+    }
 }

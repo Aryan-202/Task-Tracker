@@ -24,6 +24,7 @@ set(SOURCES
     src/utils/get_task.cpp
     src/utils/update_task.cpp
     src/utils/delete_task.cpp 
+    src/utils/id_counter.cpp
 
     src/conf/db.cpp
 )

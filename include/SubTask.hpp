@@ -3,10 +3,12 @@
 
 struct SubTask
 {
-    int id;
+    int id = 0;
     std::string title;
     std::string description;
-    bool isCompleted;
+    bool isCompleted = false;
+    std::string createdAt;
 
-    SubTask(int subTaskId, const std::string& title, const std::string& desc);
+    SubTask() = default;
+    SubTask(int subTaskId, const std::string& title, const std::string& desc, bool completed = false, const std::string& createdAt = "");
 };
