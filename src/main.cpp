@@ -1,6 +1,7 @@
 #include "TaskManager.hpp"
 #include <iostream>
 #include <string>
+#include "Utils.hpp"
 
 int main() {
     TaskManager manager;
@@ -23,6 +24,7 @@ int main() {
             std::cout << "Enter task description: ";
             std::getline(std::cin, description);
             std::cout << "TODO: implementation of the task";
+            manager.createTask(title, description);
         } 
         else if (choice == 2) {
             int taskId;
@@ -34,10 +36,9 @@ int main() {
             std::getline(std::cin, title);
             std::cout << "Enter subtask description: ";
             std::getline(std::cin, description);
-            manager.addSubTaskToTask(taskId, title, description);
         }
         else if (choice == 3) {
-            manager.listTasks();
+            std::cout << "exiting";
         }
     }
 

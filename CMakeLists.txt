@@ -24,12 +24,11 @@ set(SOURCES
     src/utils/get_task.cpp
     src/utils/update_task.cpp
     src/utils/delete_task.cpp 
+
+    src/conf/db.cpp
 )
 
 add_executable(task_tracker ${SOURCES})
 target_include_directories(task_tracker PRIVATE include)
 
 target_link_libraries(task_tracker PRIVATE nlohmann_json::nlohmann_json)
-
-# enable_testing()
-# add_test(NAME tests COMMAND tests)

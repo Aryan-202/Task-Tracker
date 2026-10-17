@@ -16,4 +16,6 @@ namespace Utils {
     void getSubTask(Task& parentTask, const std::string& title, const std::string& desc);
     void updataSubTask(Task& parentTask, const std::string& title, const std::string& desc);
     void deleteSubTask(Task& parentTask, const std::string& title, const std::string& desc);
+
+    int counter(int id);
 }
